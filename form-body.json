@@ -1,0 +1,26 @@
+{
+    "sections": [
+        {
+            "displayname": "Email Details",
+            "fields": [
+                "Email Subject",
+                "Team",
+                "Email body",
+                "Requester",
+                "Knowledge Link",
+                "Email Subject"
+            ]
+        },
+        {
+            "displayname": "Schedule",
+            "fields": [
+                "Schedule",
+                "If weekly, select days",
+                "If monthly, enter the day number",
+                "If once, enter desired run date",
+                "Status",
+                "Cherwell Instance"
+            ]
+        }
+    ]
+}

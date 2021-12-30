@@ -1,0 +1,204 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "display": "block"
+  },
+  "children": [
+    {
+      "elmType": "div",
+      "style": {
+        "display": "=if([$_ModerationStatus] == 2 || [$_ModerationStatus] == 3 || [$_ModerationStatus] == 4, 'block','none')",
+        "width": "250px"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "style": {
+            "display": "flex",
+            "flex-directon": "row",
+            "justify-content": "left",
+            "align-items": "center",
+            "flex-wrap": "wrap"
+          },
+          "children": [
+            {
+              "elmType": "button",
+              "customRowAction": {
+                "action": "editProps"
+              },
+              "attributes": {
+                "class": "ms-fontColor-themePrimary ms-fontColor-themeDarker--hover"
+              },
+              "style": {
+                "border": "none",
+                "background-color": "transparent",
+                "cursor": "pointer",
+                "display": "=if([$_ModerationStatus] == 3, 'flex','none')",
+                "flex-directon": "row",
+                "justify-content": "left",
+                "align-items": "center",
+                "flex-wrap": "wrap",
+                "padding": "5px 5px 0 0"
+              },
+              "children": [
+                {
+                  "elmType": "span",
+                  "attributes": {
+                    "iconName": "FieldNotChanged"
+                  },
+                  "style": {
+                    "padding": "4px"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": "Edit metadata",
+                  "style": {
+                    "word-break": "keep-all"
+                  }
+                }
+              ]
+            },
+            {
+              "elmType": "button",
+              "customRowAction": {
+                "action": "setValue",
+                "actionInput": {
+                  "_ModerationStatus": 2
+                }
+              },
+              "attributes": {
+                "class": "ms-fontColor-themePrimary ms-fontColor-themeDarker--hover"
+              },
+              "style": {
+                "border": "none",
+                "background-color": "transparent",
+                "cursor": "pointer",
+                "display": "=if([$_ModerationStatus] == 3, 'flex','none')",
+                "flex-directon": "row",
+                "justify-content": "left",
+                "align-items": "center",
+                "flex-wrap": "wrap",
+                "padding": "5px 5px 0 0"
+              },
+              "children": [
+                {
+                  "elmType": "span",
+                  "attributes": {
+                    "iconName": "ComplianceAudit"
+                  },
+                  "style": {
+                    "padding": "4px"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": "Submit for approval",
+                  "style": {
+                    "word-break": "keep-all"
+                  }
+                }
+              ]
+            },
+            {
+              "elmType": "button",
+              "customRowAction": {
+                "action": "setValue",
+                "actionInput": {
+                  "_ModerationStatus": 0
+                }
+              },
+              "attributes": {
+                "class": "ms-fontColor-themePrimary ms-fontColor-themeDarker--hover"
+              },
+              "style": {
+                "border": "none",
+                "background-color": "transparent",
+                "cursor": "pointer",
+                "display": "=if([$_ModerationStatus] == 2, 'flex','none')",
+                "flex-directon": "row",
+                "justify-content": "left",
+                "align-items": "center",
+                "flex-wrap": "wrap",
+                "padding": "5px 5px 5px 0"
+              },
+              "children": [
+                {
+                  "elmType": "span",
+                  "attributes": {
+                    "iconName": "CompletedSolid"
+                  },
+                  "style": {
+                    "padding": "4px"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": "Approve",
+                  "style": {
+                    "word-break": "keep-all"
+                  }
+                }
+              ]
+            },
+            {
+              "elmType": "button",
+              "customRowAction": {
+                "action": "setValue",
+                "actionInput": {
+                  "_ModerationStatus": 1
+                }
+              },
+              "attributes": {
+                "class": "ms-fontColor-themePrimary ms-fontColor-themeDarker--hover"
+              },
+              "style": {
+                "border": "none",
+                "background-color": "transparent",
+                "cursor": "pointer",
+                "display": "=if([$_ModerationStatus] == 2, 'flex','none')",
+                "flex-directon": "row",
+                "justify-content": "left",
+                "align-items": "center",
+                "flex-wrap": "wrap"
+              },
+              "children": [
+                {
+                  "elmType": "span",
+                  "attributes": {
+                    "iconName": "Blocked"
+                  },
+                  "style": {
+                    "padding": "4px"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": "Reject",
+                  "style": {
+                    "word-break": "keep-all"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "elmType": "div",
+      "children": [
+        {
+          "elmType": "div",
+          "txtContent": "=if([$_ModerationStatus] == 0, 'This item is approved and visible to everyone.',if([$_ModerationStatus] == 1, 'This item was rejected. Only the last major version is visible to everyone.',if([$_ModerationStatus] == 2, 'This item is pending approval.',if([$_ModerationStatus] == 3, 'This item is a draft.','Unknown. Contact FIT for support.'))))",
+          "style": {
+            "display": "block",
+            "padding": "5px",
+            "word-break": "keep-all"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/column-formatting.schema.json",
+  "debugMode": true,
+  "elmType": "div",
+  "style": {
+    "display": "block",
+    "margin": "10px 0"
+  },
+  "children": [
+    {
+      "elmType": "a",
+      "attributes": {
+        "target": "_blank",
+        "href": "@currentField"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "attributes": {
+            "iconName": "SharePointLogo",
+            "class": "ms-fontWeight-regular",
+            "title": "Details"
+          },
+          "style": {
+            "display": "table-cell",
+            "font-size": "1.2em",
+            "padding": "0px 5px 0px"
+          }
+        },
+        {
+          "elmType": "div",
+          "txtContent": "Launch in SharePoint",
+          "style": {
+            "display": "table-cell",
+            "vertical-align": "middle"
+          }
+        }
+      ],
+      "style": {
+        "display": "=if(@currentField!='', 'block','none')",
+        "padding": "4px",
+        "margin": "4px",
+        "clear": "both",
+        "border-radius": "3px",
+        "background-color": "#0078D4",
+        "text-decoration": "none",
+        "color": "#ffffff",
+        "text-align": "center",
+        "width": "160px",
+        "font-weight": "500"
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style":{
+        "white-space":"wrap",
+        "font-size":"14px",
+        "padding":"5px 0px",
+        "color":"#333333"
+  }, 
+  "txtContent": "@currentField"
+}

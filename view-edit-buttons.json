@@ -25,7 +25,8 @@
         "font-weight": "500",
         "color": "#0050b5",
         "text-align": "center",
-        "width": "70px"
+        "width": "70px",
+        "border":"1px solid #e8e8e6"
       }
     },
     {
@@ -46,7 +47,8 @@
         "font-weight": "500",
         "color": "#0050b5",
         "text-align": "center",
-        "width": "70px"
+        "width": "70px",
+        "border":"1px solid #e8e8e6"
       }
     }
   ]
